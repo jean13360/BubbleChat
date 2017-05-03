@@ -1,0 +1,18 @@
+<div [formGroup]="form">
+  <label [attr.for]="bubble.key">{{bubble.label}}</label>
+  <div [ngSwitch]="bubble.controlType">
+    <div *ngSwitchCase="'textbox'">
+       <div [ngSwitch]="bubble.type">
+          <input *ngSwitchCase="'textbox'" [formControlName]="bubble.key" [id]="bubble.key" [type]="bubble.type">          
+          <input *ngSwitchCase="'date'"  [formControlName]="bubble.key" [id]="bubble.key" [type]="bubble.type" [value] = "bubble.value|date: 'yyyy-MM-dd'"> 
+       </div>
+    </div>
+    
+    
+
+    <select [id]="bubble.key" *ngSwitchCase="'dropdown'" [formControlName]="bubble.key">
+      <option *ngFor="let opt of bubble.options" [value]="opt.key">{{opt.value}}</option>
+    </select>
+  </div> 
+  <div class="errorMessage" *ngIf="!isValid">{{bubble.label}} is required</div>
+</div>

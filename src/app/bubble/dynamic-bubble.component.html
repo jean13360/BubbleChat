@@ -1,0 +1,10 @@
+<div>
+  <form (ngSubmit)="onSubmit()" [formGroup]="form">
+    <div *ngFor="let bubble of bubbles" class="form-row">
+      <df-bubble [bubble]="bubble" [form]="form"></df-bubble>
+    </div>
+    <div class="form-row">
+      <button type="submit" [disabled]="!form.valid">Save</button>
+    </div>
+  </form>
+</div>

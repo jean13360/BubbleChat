@@ -1,3 +1,27 @@
-<h1>
-  {{title}}
-</h1>
+<img src="assets/littleCm.jpg"
+style = " background:rgb(63,81,181);position:absolute;
+  left:0px;top:10px;
+  -moz-border-radius:40px;
+  -webkit-border-radius:40px;
+  border-radius:40px;   z-index: 1;"/>
+<div class="talk-bubble tri-right round border left-top">
+  <br>
+  <div class="talktext" >
+    <dynamic-bubble [bubbles]="questions"></dynamic-bubble>
+  </div>
+</div>
+
+
+<img src="assets/deathNote.jpg"
+style = " background:rgb(63,81,181);position:relative;
+  float: right;
+  right: 15px;
+  -moz-border-radius:40px;
+  -webkit-border-radius:40px;
+  border-radius:40px;   z-index: 1;"/>
+<div class="talk-bubble tri-right round border right-top" style="float:right">
+  <br>
+  <div class="talktext" >
+    <dynamic-bubble [bubbles]="questions"></dynamic-bubble>
+  </div>
+</div>

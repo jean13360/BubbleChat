@@ -1,18 +1,19 @@
-import { Component }       from '@angular/core';
-import { QuestionService } from './question.service';
+import { Component, OnInit }       from '@angular/core';
+import { BubbleService } from './bubble/bubble.service';
+
 @Component({
   selector: 'my-app',
-  template: `
-    <div>
-      <h2>Job Application for Heroes</h2>
-      <dynamic-form [questions]="questions"></dynamic-form>
-    </div>
-  `,
-  providers:  [QuestionService]
+
+  styleUrls: ['./app.component.css'],
+  templateUrl: './app.component.html',
+  providers:  [BubbleService]
 })
 export class AppComponent {
   questions: any[];
-  constructor(service: QuestionService) {
-    this.questions = service.getQuestions();
+
+
+  constructor(private service: BubbleService) {
+    this.questions = service.createcomponents(service.getChats());
+    console.debug(this.questions)
   }
 }
